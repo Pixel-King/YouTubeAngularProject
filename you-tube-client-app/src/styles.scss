@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+html {
+  color: #4f4f4f;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+}
+body{
+  margin: 0;
+}
+button{
+  background: #2F80ED;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 0;
+  border: 0;
+  filter: drop-shadow(2px 0px 4px #2F80ED);
+}
