@@ -13,6 +13,7 @@ import { SearchResultsComponent } from './search/search-results/search-results.c
 import { SearchResultItemComponent } from './search/search-result-item/search-result-item.component';
 import { VideoThumbnailComponent } from './search/search-result-item/video-thumbnail/video-thumbnail.component';
 import { VideoStatisticsComponent } from './search/search-result-item/video-statistics/video-statistics.component';
+import { FilteringCriteriaBlockComponent } from './filtering-criteria-block/filtering-criteria-block.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { VideoStatisticsComponent } from './search/search-result-item/video-stat
     SearchResultItemComponent,
     VideoThumbnailComponent,
     VideoStatisticsComponent,
+    FilteringCriteriaBlockComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

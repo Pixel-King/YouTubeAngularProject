@@ -13,7 +13,7 @@ export const data: YouTubeApiRes = {
       etag: '"Fznwjl6JEQdo1MGvHOGaz_YanRU/tmmI1yiRrmLWlKikXk1gD3TXsUI"',
       id: 'YN8zNnV0sK8',
       snippet: {
-        publishedAt: '2019-05-30T12:42:19.000Z',
+        publishedAt: '2023-02-30T12:42:19.000Z',
         channelId: 'UCg8ss4xW9jASrqWGP30jXiw',
         title: 'Angular 8 - Быстрый курс за 60 минут',
         description:
@@ -316,7 +316,7 @@ export const data: YouTubeApiRes = {
       etag: '"Fznwjl6JEQdo1MGvHOGaz_YanRU/_99tEunMszVYvCj2-1aUTKgOoSY"',
       id: 'm0yGx2MGZWg',
       snippet: {
-        publishedAt: '2018-05-13T07:44:08.000Z',
+        publishedAt: '2023-04-01T07:44:08.000Z',
         channelId: 'UCe_H8hzx9WV7Ca7Ps5gt72Q',
         title: 'Что такое Angular. Обзор возможностей',
         description:

@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
+import { FilteringParamService } from 'src/app/filtering-criteria-block/filtering-param.service';
 
 @Component({
   selector: 'app-settings-button',
@@ -6,9 +7,11 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./settings-button.component.scss'],
 })
 export class SettingsButtonComponent {
-  @Input() isShowSettings: Boolean;
+  constructor(
+    readonly filteringParamService: FilteringParamService,
+  ) {}
 
   onClick():void {
-    this.isShowSettings = !this.isShowSettings;
+    this.filteringParamService.switchShowFilteringBlock();
   }
 }

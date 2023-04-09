@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
+import { SearchResponceService } from 'src/app/search/search-responce.service';
 
 @Component({
   selector: 'app-search-input-with-submit-button',
@@ -6,11 +7,13 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./search-input-with-submit-button.component.scss'],
 })
 export class SearchInputWithSubmitButtonComponent {
-  @Output() search = new EventEmitter<string>();
-
   searchValue = '';
 
+  constructor(
+    private readonly searchResponceService: SearchResponceService,
+  ) {}
+
   onSearch() {
-    this.search.emit(this.searchValue);
+    this.searchResponceService.setSearchResponce();
   }
 }
