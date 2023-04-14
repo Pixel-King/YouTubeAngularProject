@@ -1,8 +1,0 @@
-<div class="search-result-item-wrap">
-  <div class="search-result-item" [ngClass]="video.borderColor + '-border-bottom'">
-    <app-video-thumbnail [url]="video.getThumbnailUrl('medium')"></app-video-thumbnail>
-    <app-video-statistics [video]="video"></app-video-statistics>
-    <h3>{{video.getTitle().length > 20 ? video.getTitle().slice(0, 20) + '...' : video.getTitle() }}</h3>
-    <button>more...</button>
-  </div>
-</div>

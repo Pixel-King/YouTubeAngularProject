@@ -4,15 +4,69 @@ html {
   font-style: normal;
   font-weight: 400;
 }
-body{
+body {
   margin: 0;
 }
-button{
-  background: #2F80ED;
-  color: #FFF;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+button {
+  background: #2f80ed;
+  color: #fff;
   border-radius: 5px;
   cursor: pointer;
   padding: 0;
   border: 0;
-  filter: drop-shadow(2px 0px 4px #2F80ED);
+  filter: drop-shadow(2px 0px 4px #2f80ed);
+}
+
+button:focus {
+  filter: none;
+}
+
+.input-block {
+  margin: 5px 0;
+}
+
+.input-block label {
+  font-size: 12px;
+  line-height: 15px;
+  margin-left: 6px;
+
+  color: #828282;
+}
+
+.input-block input {
+  width: 300px;
+  height: 37px;
+
+  font-size: 14px;
+  line-height: 12px;
+  color: #000000;
+
+  background-color: #e0e0e0;
+  border: none;
+}
+
+form h2 {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.input-block input:focus {
+  outline: none;
+  border-radius: 0;
+  border: none;
+  height: 32px;
+
+  border-radius: 0px 0px 5px 5px;
+  border-bottom: 5px solid #c4c4c4;
 }

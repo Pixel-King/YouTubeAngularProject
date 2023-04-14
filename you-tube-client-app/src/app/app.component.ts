@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FilteringParamService } from './filtering-criteria-block/filtering-param.service';
+import { AuthService } from './auth/services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -9,13 +9,9 @@ import { FilteringParamService } from './filtering-criteria-block/filtering-para
 export class AppComponent implements OnInit {
   title = 'you-tube-client-app';
 
-  isShow: Boolean;
+  constructor(private authService: AuthService) {}
 
-  constructor(
-    readonly filteringParamService: FilteringParamService,
-  ) {}
-
-  ngOnInit() {
-    this.filteringParamService.isShowSubject.subscribe((value) => this.isShow =  value);
+  ngOnInit(): void {
+    this.authService.initLogin();
   }
 }

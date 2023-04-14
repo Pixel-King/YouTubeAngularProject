@@ -1,0 +1,10 @@
+<div class="search-setting-wrap">
+  <div>Sorting by:</div>
+  <div class="search-settings-param">
+    <ul>
+      <li (click)="setfilteringParam('date')">date</li>
+      <li (click)="setfilteringParam('view')">count of views</li>
+      <li>by word or sentence <input type="text" [(ngModel)]="sortByWordInputValue" (change)="setSortByWord()"></li>
+    </ul>
+  </div>
+</div>
