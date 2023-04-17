@@ -1,0 +1,12 @@
+<div class="search-result-item-wrap" *ngIf="video">
+  <div class="search-result-item" [borderColorByDate]="video.snippet.publishedAt">
+    <app-video-thumbnail [url]="video.snippet.thumbnails.medium.url"></app-video-thumbnail>
+    <app-video-statistics
+      [viewCount]="video.statistics.viewCount"
+      [likeCount]="video.statistics.likeCount"
+      [commentCount]="video.statistics.commentCount"
+    ></app-video-statistics>
+    <h3>{{video.snippet.title.length > 20 ? video.snippet.title.slice(0, 20) + '...' : video.snippet.title }}</h3>
+    <button (click)="showMoreDetails()">more...</button>
+  </div>
+</div>

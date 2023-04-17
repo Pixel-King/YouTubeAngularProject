@@ -1,0 +1,26 @@
+<div class=".video-details-container">
+  <div class="video-details-wrap">
+    <button class="back-button" (click)="goBack()">
+      <img src="../../../../assets/icons/arrow.png" alt="">
+    </button>
+    <div class="video-details-image">
+      <img [src]="video.snippet.thumbnails.maxres.url" alt="thumbnail">
+    </div>
+    <div class="video-details-informaton">
+      <div class="video-details-informaton-title">{{ video.snippet.title.toString() | slice: 0 :
+        20}}{{video.snippet.title.length > 20 ? '...' : ''}}</div>
+      <div class="video-details-informaton-date">{{ video.snippet.publishedAt | date: 'fullDate'}}</div>
+      <div class="video-details-informaton-description-wrap">
+        <h3>Description:</h3>
+        <div class="video-details-informaton-description">
+          <p *ngFor="let str of video.snippet.description | description">{{str}}</p>
+        </div>
+      </div>
+      <app-video-statistics
+        [viewCount]="video.statistics.viewCount"
+        [likeCount]="video.statistics.likeCount"
+        [commentCount]="video.statistics.commentCount"
+      ></app-video-statistics>
+    </div>
+  </div>
+</div>
