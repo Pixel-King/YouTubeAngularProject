@@ -1,16 +1,11 @@
-export interface YouTubeApiRes {
+export interface VideosResponce {
   kind: string
   etag: string
+  items: VideoVideosRes[]
   pageInfo: PageInfo
-  items: VideoInf[]
 }
 
-export interface PageInfo {
-  totalResults: number
-  resultsPerPage: number
-}
-
-export interface VideoInf {
+export interface VideoVideosRes {
   kind: string
   etag: string
   id: string
@@ -29,8 +24,7 @@ export interface Snippet {
   categoryId: string
   liveBroadcastContent: string
   localized: Localized
-  defaultAudioLanguage: string
-  defaultLanguage?: string
+  defaultAudioLanguage?: string
 }
 
 export interface Thumbnails {
@@ -55,7 +49,11 @@ export interface Localized {
 export interface Statistics {
   viewCount: string
   likeCount: string
-  dislikeCount: string
   favoriteCount: string
   commentCount: string
+}
+
+export interface PageInfo {
+  totalResults: number
+  resultsPerPage: number
 }

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { SearchItem } from '../../models/search-item.model';
 import { VideosService } from '../../services/videos.service';
 
 @Component({
@@ -8,11 +7,11 @@ import { VideosService } from '../../services/videos.service';
   styleUrls: ['./main-page.component.scss'],
 })
 export class MainPageComponent implements OnInit {
-  videos: SearchItem[];
+  videos: String[];
 
   constructor(private videosService: VideosService) {}
 
   ngOnInit(): void {
-    this.videos = this.videosService.getVideos();
+    this.videosService.getVideos().subscribe(videos => this.videos = videos );
   }
 }

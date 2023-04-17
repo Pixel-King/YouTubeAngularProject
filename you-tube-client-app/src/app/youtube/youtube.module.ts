@@ -6,10 +6,10 @@ import { VideoStatisticsComponent } from './components/video-statistics/video-st
 import { VideoThumbnailComponent } from './components/video-thumbnail/video-thumbnail.component';
 import { NumeralReductionPipe } from './pipes/numeral-reduction.pipe';
 import { MoreAboutVideoComponent } from './pages/more-about-video/more-about-video.component';
-import { SearchResultFilterPipe } from './pipes/search-result-filter.pipe';
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { VideoDetailsCardComponent } from './components/video-details-card/video-details-card.component';
 import { DescriptionPipe } from './pipes/description.pipe';
+import { BorderColorByDateDirective } from './directives/border-color-by-date.directive';
 
 
 
@@ -19,13 +19,12 @@ import { DescriptionPipe } from './pipes/description.pipe';
     VideoThumbnailComponent,
     SearchResultsComponent,
     SearchResiltsItemComponent,
-    SearchResultFilterPipe,
     NumeralReductionPipe,
     MoreAboutVideoComponent,
-    SearchResultFilterPipe,
     MainPageComponent,
     VideoDetailsCardComponent,
     DescriptionPipe,
+    BorderColorByDateDirective,
   ],
   exports: [
     SearchResultsComponent,

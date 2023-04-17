@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
-import { FilteringParam } from 'src/app/youtube/services/search-responce.service';
+import { OrderParam } from '../model/order-parameter.model';
 
 @Injectable({
   providedIn: 'root',
@@ -14,13 +14,7 @@ export class SearchAndFilteringService {
 
   // filteringWord: string = '';
 
-  public filteringParam = new Subject<FilteringParam>();
-  // {
-  //   type: '',
-  //   isReverse: false,
-  // };
-
-  // searchValue: string = '';
+  public orderParam = new Subject<OrderParam>();
 
   public switchShowFilteringBlock() {
     this.isShow = !this.isShow;
@@ -31,7 +25,8 @@ export class SearchAndFilteringService {
     this.filteringWord.next(str);
   }
 
-  public setFilteringParam(param: FilteringParam) {
-    this.filteringParam.next(param);
+  public setFilteringParam(param: OrderParam) {
+    console.log(param);
+    this.orderParam.next(param);
   }
 }

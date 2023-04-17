@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { FilteringParam, FilteringType } from 'src/app/youtube/services/search-responce.service';
 import { SearchAndFilteringService } from '../../services/search-and-filtering.service';
+import { OrderParam } from '../../model/order-parameter.model';
 
 @Component({
   selector: 'app-filtering-criteria-block',
@@ -10,27 +10,28 @@ import { SearchAndFilteringService } from '../../services/search-and-filtering.s
 export class FilteringCriteriaBlockComponent {
   sortByWordInputValue = '';
 
-  filteringParam:FilteringParam = {
-    type: '',
-    isReverse: false,
-  };
+  isSortByDate = false;
+
+  isSortByViewCount = false;
+
+  filteringParam: OrderParam = 'relevance';
 
   constructor(
     private readonly searchAndFilteringService: SearchAndFilteringService,
   ) {}
 
-  setfilteringParam(sortType:FilteringType) {
-    if (this.filteringParam.type === sortType ) {
-      if (this.filteringParam.isReverse === true) {
-        this.filteringParam.type = '';
-        this.filteringParam.isReverse = false;
-      } else {
-        this.filteringParam.type = sortType;
-        this.filteringParam.isReverse = true;
-      }
-    } else {
-      this.filteringParam.type = sortType;
+  setfilteringParam(sortType:OrderParam) {
+    if (sortType === 'date') {
+      this.isSortByDate = !this.isSortByDate;
+      this.isSortByViewCount = false;
+      if (this.isSortByDate) this.filteringParam = 'date';
     }
+    if (sortType === 'viewCount') {
+      this.isSortByViewCount = !this.isSortByViewCount;
+      this.isSortByDate = false;
+      if (this.isSortByViewCount) this.filteringParam = 'viewCount';
+    }
+    if (!this.isSortByViewCount && !this.isSortByDate) this.filteringParam = 'relevance';
     this.searchAndFilteringService.setFilteringParam(this.filteringParam);
   }
 

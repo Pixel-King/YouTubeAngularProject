@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { VideosService } from '../../services/videos.service';
-import { SearchItem } from '../../models/search-item.model';
+import { VideoVideosRes } from '../../models/videos-responce.model';
 
 @Component({
   selector: 'app-more-about-video',
@@ -9,7 +9,7 @@ import { SearchItem } from '../../models/search-item.model';
   styleUrls: ['./more-about-video.component.scss'],
 })
 export class MoreAboutVideoComponent implements OnInit {
-  video: SearchItem;
+  video: VideoVideosRes;
 
   constructor(
     private router: Router,
@@ -20,12 +20,13 @@ export class MoreAboutVideoComponent implements OnInit {
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
-      const video = this.videoService.getVideo(id);
-      if (video) {
-        this.video = video;
-      } else {
-        this.redirectToNotFound();
-      }
+      this.videoService.getVideo(id).subscribe(value => {
+        if (value.length) {
+          this.video = value[0];
+        } else {
+          this.redirectToNotFound();
+        }
+      });
     } else {
       this.redirectToNotFound();
     }
@@ -34,5 +35,4 @@ export class MoreAboutVideoComponent implements OnInit {
   redirectToNotFound() {
     this.router.navigate(['**']);
   }
-
 }

@@ -1,45 +1,42 @@
 import { Injectable } from '@angular/core';
 import { User } from '../models/user.model';
 import { Router } from '@angular/router';
-import { Subject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  public user = new Subject<User>();
+  // public user = new Subject<User>();
 
-  private isLoggedIn: Boolean = false;
+  private isLoggedInSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+
+  public isLoggedIn$: Observable<boolean> = this.isLoggedInSubject.asObservable();
 
   constructor(private router: Router) {}
 
   login(user: User): void {
     if (user.username && user.password) {
-      user = { ...user, jwtToken: 'XXXadfa13A-dfas@31342313-%%aadf%%adf' };
-      this.user.next({ ...user, jwtToken: 'XXXadfa13A-dfas@31342313-%%aadf%%adf' });
-      localStorage.setItem('user', JSON.stringify(user));
-      this.isLoggedIn = true;
+      localStorage.setItem('jwtToken', 'XXXadfa13A-dfas@31342313-%%aadf%%adf');
+      this.isLoggedInSubject.next(true);
       this.router.navigate(['']);
     }
   }
 
   initLogin() {
-    const localStoreUser = localStorage.getItem('user');
-    if (localStoreUser) {
-      const user: User = JSON.parse(localStoreUser);
-      console.log(user);
-      this.user.next(user);
-      this.isLoggedIn = true;
+    const localStoreJwtToken = localStorage.getItem('jwtToken');
+    if (localStoreJwtToken) {
+      this.isLoggedInSubject.next(true);
     }
   }
 
   logOut() {
-    this.user.next({ username: 'Your name', password: '', jwtToken: '' });
-    localStorage.removeItem('user');
-    this.isLoggedIn = false;
+    localStorage.removeItem('jwtToken');
+    this.isLoggedInSubject.next(false);
+    this.router.navigate(['auth/login']);
   }
 
-  getLogStatus():Boolean {
-    return this.isLoggedIn;
-  }
+  // getLogStatus():Boolean {
+  //   return this.isLoggedIn;
+  // }
 }

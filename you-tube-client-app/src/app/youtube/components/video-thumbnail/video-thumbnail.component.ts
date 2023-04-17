@@ -6,5 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./video-thumbnail.component.scss'],
 })
 export class VideoThumbnailComponent {
-  @Input() url: String;
+  @Input() url: String | undefined;
 }

@@ -1,5 +1,4 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { SearchItem } from '../models/search-item.model';
 import { FilteringParam } from '../services/search-responce.service';
 import { Router } from '@angular/router';
 

@@ -16,10 +16,16 @@
 }
 
 .search-settings-param ul li {
+  cursor: pointer;
   margin-right: 10px;
   margin-left: 11px;
-  text-decoration-line: underline;
+
+  text-decoration-line: none;
   color: #2f80ed;
+}
+
+.underline {
+  text-decoration-line: underline !important;
 }
 
 input[type="text"] {

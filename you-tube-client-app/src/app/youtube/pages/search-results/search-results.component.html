@@ -1,4 +1,4 @@
 <div class="search-results-wrapper">
-  <app-search-resilts-item *ngFor="let video of videos | searchResultFilter: filteringWord : filteringParam"
-    [video]="video"></app-search-resilts-item>
+  <app-search-resilts-item *ngFor="let video of videos"
+    [videoId]="video"></app-search-resilts-item>
 </div>

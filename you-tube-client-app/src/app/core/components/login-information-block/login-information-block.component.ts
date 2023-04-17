@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/auth/models/user.model';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/services/auth.service';
 
 @Component({
@@ -8,16 +8,25 @@ import { AuthService } from 'src/app/auth/services/auth.service';
   styleUrls: ['./login-information-block.component.scss'],
 })
 export class LoginInformationBlockComponent implements OnInit {
-  userName: User = {
-    username: 'Your Name',
-    password: '',
-    jwtToken: 'asdfasdf',
-  };
+  isLoggedIn$ = this.authService.isLoggedIn$;
 
-  constructor(private authService: AuthService) {}
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+  ) {}
 
   ngOnInit(): void {
-    this.authService.user.subscribe(value => this.userName = value);
-    // this.authService.getUserName();
+    console.log(this.isLoggedIn$);
+    // this.authService.isLoggedIn$.subscribe((isLog) => this.isLoggedIn = isLog );
+  }
+
+  login():void {
+    console.log('login');
+    this.router.navigate(['auth/login']);
+  }
+
+  logout():void {
+    console.log('logout');
+    this.authService.logOut();
   }
 }

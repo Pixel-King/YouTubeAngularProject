@@ -1,4 +1,9 @@
 <div class="user-information-wrapper">
-  <span>{{ this.userName.username }}</span>
+  <div *ngIf="isLoggedIn$ | async; else loginTem">
+    <span (click)="logout()">logout</span>
+  </div>
+  <ng-template #loginTem>
+    <span (click)="login()">Logout</span>
+  </ng-template>
   <img src="../../../../assets/icons/login.png" alt="profile">
 </div>

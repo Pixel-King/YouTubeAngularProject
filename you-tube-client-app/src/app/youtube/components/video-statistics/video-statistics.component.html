@@ -2,16 +2,16 @@
   <ul>
     <li>
       <img src="../../../../../assets/icons/viewed.png" alt="viewed">
-      <span>{{viewCount | numeralReduction}}</span>
+      <span *ngIf="viewCount; else zero">{{viewCount | numeralReduction}}</span>
     </li>
     <li> <img src="../../../../../assets/icons/liked.png" alt="likes">
-      <span>{{likeCount | numeralReduction}}</span>
+      <span *ngIf="likeCount; else zero">{{likeCount | numeralReduction}}</span>
     </li>
     <li> <img src="../../../../../assets/icons/dislike.png" alt="disliked">
-      <span>{{dislikeCount | numeralReduction}}</span>
     </li>
-    <li> <img src="../../../../../assets/icons/commented.png" alt="commented">
+    <li *ngIf="commentCount; else zero"> <img src="../../../../../assets/icons/commented.png" alt="commented">
       <span>{{commentCount | numeralReduction}}</span>
     </li>
+    <ng-template #zero><span>0</span></ng-template>
   </ul>
 </div>

@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { SearchItem } from '../../models/search-item.model';
 import { Location } from '@angular/common';
+import { VideoVideosRes } from '../../models/videos-responce.model';
 
 @Component({
   selector: 'app-video-details-card',
@@ -8,7 +8,7 @@ import { Location } from '@angular/common';
   styleUrls: ['./video-details-card.component.scss'],
 })
 export class VideoDetailsCardComponent {
-  @Input() video: SearchItem;
+  @Input() video: VideoVideosRes;
 
   constructor(private location: Location) {}
 

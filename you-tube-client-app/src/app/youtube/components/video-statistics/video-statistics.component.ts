@@ -9,13 +9,11 @@ import { Component, Inject, Input, LOCALE_ID } from '@angular/core';
 export class VideoStatisticsComponent {
   // @Input() video: SearchItem;
 
-  @Input() viewCount: String;
+  @Input() viewCount: String | undefined;
 
-  @Input() dislikeCount: String;
+  @Input() likeCount: String | undefined;
 
-  @Input() likeCount: String;
-
-  @Input() commentCount: String;
+  @Input() commentCount: String | undefined;
 
   constructor(
     @Inject(LOCALE_ID) public locale: string) {}
