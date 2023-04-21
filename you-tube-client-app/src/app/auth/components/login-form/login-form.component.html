@@ -1,13 +1,35 @@
 <div class="login-form-wrapper">
   <h2>Login</h2>
-  <form (submit)="onSubmit()">
+  <form [formGroup]="loginForm">
     <div class="input-block">
-      <label for="username">Username:</label>
-      <input type="text" id="username" [(ngModel)]="username" name="username" required>
+      <label for="username">E-mail:</label>
+      <input type="text" id="username" formControlName="email" name="username" required>
+      <div class="form-err-message-wrap">
+        <div *ngIf="email?.errors?.['required']">
+          Please enter a login email
+        </div>
+        <div *ngIf="email?.errors?.['email']">
+          The login email is invalid
+        </div>
+      </div>
     </div>
     <div class="input-block">
       <label for="password">Password:</label>
-      <input type="password" id="password" [(ngModel)]="password" name="password" required>
+      <input type="password" id="password" formControlName="password" name="password" required>
+      <div class="form-err-message-wrap">
+        <div *ngIf="password?.errors?.['required']">
+          Please enter a password
+        </div>
+        <div *ngIf="password?.errors?.['password']">
+          Your password needs to:
+          <ul>
+            <li>at least 8 characters</li>
+            <li>a mixture of both uppercase and lowercase letters</li>
+            <li>a mixture of letters and numbers</li>
+            <li>inclusion of at least one special character, e.g., ! @ # ? ]</li>
+          </ul>
+        </div>
+      </div>
     </div>
     <button type="submit">Login</button>
   </form>

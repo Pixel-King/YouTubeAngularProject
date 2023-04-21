@@ -1,5 +1,5 @@
 export interface User {
-  username: string;
-  password: string;
-  jwtToken: string;
+  username: string | null;
+  password: string | null;
+  jwtToken: string | null;
 }
