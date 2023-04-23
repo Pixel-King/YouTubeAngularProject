@@ -22,6 +22,7 @@ export class VideosService {
       .set('q', `${search} ${filter}`)
       .set('order', order)
       .set('part', 'id')
+      .set('maxResults', 8)
       .set('type', 'video');
     return this.http.get<SearchResponce>(`${this.apiUrl}/search`, { params }).pipe(map(res => res.items.map(item => item.id.videoId)));
   }

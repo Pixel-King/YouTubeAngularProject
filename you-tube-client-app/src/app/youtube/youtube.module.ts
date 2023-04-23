@@ -10,6 +10,9 @@ import { MainPageComponent } from './pages/main-page/main-page.component';
 import { VideoDetailsCardComponent } from './components/video-details-card/video-details-card.component';
 import { DescriptionPipe } from './pipes/description.pipe';
 import { BorderColorByDateDirective } from './directives/border-color-by-date.directive';
+import { AdminPageComponent } from './pages/admin-page/admin-page.component';
+import { AddNewCardFormComponent } from './components/add-new-card-form/add-new-card-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -25,14 +28,19 @@ import { BorderColorByDateDirective } from './directives/border-color-by-date.di
     VideoDetailsCardComponent,
     DescriptionPipe,
     BorderColorByDateDirective,
+    AdminPageComponent,
+    AddNewCardFormComponent,
   ],
   exports: [
     SearchResultsComponent,
     MoreAboutVideoComponent,
+    AdminPageComponent,
     MainPageComponent,
+    FormsModule,
   ],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
   ],
 })
 export class YoutubeModule { }

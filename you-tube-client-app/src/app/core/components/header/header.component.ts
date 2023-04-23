@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { SearchAndFilteringService } from '../../services/search-and-filtering.service';
 
 @Component({
@@ -7,6 +7,8 @@ import { SearchAndFilteringService } from '../../services/search-and-filtering.s
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
+  @Input() a: string;
+
   isShow: Boolean;
 
   constructor(

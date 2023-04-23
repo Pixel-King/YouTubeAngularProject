@@ -21,12 +21,16 @@ export class LoginInformationBlockComponent implements OnInit {
   }
 
   login():void {
-    console.log('login');
     this.router.navigate(['auth/login']);
   }
 
   logout():void {
     console.log('logout');
     this.authService.logOut();
+  }
+
+  goAdmin() {
+    console.log('qe');
+    this.router.navigate(['admin']);
   }
 }

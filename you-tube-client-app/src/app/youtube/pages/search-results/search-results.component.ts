@@ -18,7 +18,6 @@ export class SearchResultsComponent implements OnInit {
         const search = params['search'];
         const filtering = params['filter'];
         const order = params['order'];
-        console.log(order);
         this.videosService.getVideos(search, filtering, order).subscribe(videos => this.videos = videos);
       } catch (error) {
         console.error(error);

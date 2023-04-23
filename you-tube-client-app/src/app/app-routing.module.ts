@@ -6,6 +6,7 @@ import { NotFoundPageComponent } from './core/pages/not-found-page/not-found-pag
 import { LoginComponent } from './auth/pages/login/login.component';
 import { AuthGuard } from './auth-guard.guard';
 import { MainPageComponent } from './youtube/pages/main-page/main-page.component';
+import { AdminPageComponent } from './youtube/pages/admin-page/admin-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '', pathMatch: 'full', component: MainPageComponent, canActivate: [AuthGuard] },
@@ -16,6 +17,7 @@ const routes: Routes = [
     children: [
       { path: 'login', component: LoginComponent },
     ] },
+  { path: 'admin', component: AdminPageComponent, canActivate: [AuthGuard] },
   { path: '**', component: NotFoundPageComponent },
 ];
 

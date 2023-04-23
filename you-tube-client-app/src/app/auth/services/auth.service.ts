@@ -17,9 +17,10 @@ export class AuthService {
 
   login(user: User): void {
     if (user.username && user.password) {
+      console.log('log');
       localStorage.setItem('jwtToken', 'XXXadfa13A-dfas@31342313-%%aadf%%adf');
       this.isLoggedInSubject.next(true);
-      this.router.navigate(['']);
+      this.router.navigate(['../']);
     }
   }
 

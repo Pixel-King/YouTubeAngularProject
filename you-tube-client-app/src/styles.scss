@@ -33,6 +33,8 @@ button:focus {
 
 .input-block {
   margin: 5px 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .input-block label {
