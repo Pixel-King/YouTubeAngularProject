@@ -1,0 +1,11 @@
+<div class="user-information-wrapper">
+  <div>
+    <span *ngIf="isLoggedIn$ | async; else loginTem" class="login-inf" (click)="logout()">Logout</span>
+  </div>
+  <ng-template #loginTem>
+    <span (click)="login()" class="login-inf">Login</span>
+  </ng-template>
+  <div (click)="goAdmin()">
+    <img src="../../../../assets/icons/login.png" alt="profile">
+  </div>
+</div>

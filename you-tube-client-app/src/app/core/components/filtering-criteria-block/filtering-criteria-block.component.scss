@@ -1,0 +1,36 @@
+.search-setting-wrap {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e5e5e5;
+}
+// .search-settings-param{
+// }
+.search-settings-param ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.search-settings-param ul li {
+  cursor: pointer;
+  margin-right: 10px;
+  margin-left: 11px;
+
+  text-decoration-line: none;
+  color: #2f80ed;
+}
+
+.underline {
+  text-decoration-line: underline !important;
+}
+
+input[type="text"] {
+  width: 149px;
+  height: 13px;
+
+  padding: 0;
+}

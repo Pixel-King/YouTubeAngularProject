@@ -1,0 +1,15 @@
+.search-results-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 15px;
+  // padding: 31px;
+}
+
+.search-results-wrapper app-search-resilts-item {
+  width: 25%;
+}

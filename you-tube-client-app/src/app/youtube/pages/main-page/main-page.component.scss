@@ -1,0 +1,14 @@
+.videos-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 15px;
+}
+
+.videos-wrapper app-search-resilts-item {
+  width: 25%;
+}
