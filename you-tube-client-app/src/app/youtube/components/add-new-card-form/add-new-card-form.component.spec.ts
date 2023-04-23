@@ -8,9 +8,9 @@ describe('AddNewCardFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AddNewCardFormComponent ]
+      declarations: [ AddNewCardFormComponent ],
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(AddNewCardFormComponent);
     component = fixture.componentInstance;
