@@ -34,7 +34,6 @@ export class AddNewCardFormComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.addNewCardForm.valid);
     if (this.addNewCardForm.valid) {
 
     }
